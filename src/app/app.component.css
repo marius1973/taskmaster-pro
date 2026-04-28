@@ -1,0 +1,27 @@
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.stats-placeholder {
+  max-width: 800px;
+  margin: 30px auto 0;
+  padding: 40px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+}

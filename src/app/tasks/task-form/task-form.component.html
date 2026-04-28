@@ -1,0 +1,28 @@
+<div class="form-container">
+  <h2>➕ Nueva Tarea</h2>
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="newTask.title"
+      placeholder="Título de la tarea"
+      (keyup.enter)="addTask()"
+      class="form-input"
+    >
+  </div>
+  <div class="form-group">
+    <textarea
+      [(ngModel)]="newTask.description"
+      placeholder="Descripción (opcional)"
+      rows="2"
+      class="form-input"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <select [(ngModel)]="newTask.category" class="form-input">
+      @for (cat of categories; track cat.value) {
+        <option [value]="cat.value">{{ cat.label }}</option>
+      }
+    </select>
+  </div>
+  <button (click)="addTask()" class="btn-submit">Agregar Tarea</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="stats-container">
+  <h3>📊 Estadísticas</h3>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{{ stats().total }}</div>
+      <div class="stat-label">Total Tareas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ stats().completed }}</div>
+      <div class="stat-label">Completadas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ stats().pending }}</div>
+      <div class="stat-label">Pendientes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ stats().completionRate }}%</div>
+      <div class="stat-label">Progreso</div>
+    </div>
+  </div>
+</div>

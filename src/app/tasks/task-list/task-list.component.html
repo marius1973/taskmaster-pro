@@ -1,0 +1,44 @@
+<div class="task-container">
+  <!-- Filtros -->
+  <div class="filters">
+    <button 
+      (click)="setFilter('all')" 
+      [class.active]="currentFilter() === 'all'">
+      📋 Todas
+    </button>
+    <button 
+      (click)="setFilter('active')" 
+      [class.active]="currentFilter() === 'active'">
+      🔄 Activas
+    </button>
+    <button 
+      (click)="setFilter('completed')" 
+      [class.active]="currentFilter() === 'completed'">
+      ✅ Completadas
+    </button>
+  </div>
+
+  <!-- Lista de tareas -->
+  <div class="task-list">
+    @for (task of filteredTasks(); track task.id) {
+      <div class="task-item" [class.completed]="task.completed">
+        <input 
+          type="checkbox" 
+          [checked]="task.completed"
+          (change)="toggleTask(task.id)">
+        <div class="task-content">
+          <span class="task-title">{{ task.title }}</span>
+          @if (task.description) {
+            <span class="task-description">{{ task.description }}</span>
+          }
+          <span class="task-category">{{ task.category }}</span>
+        </div>
+        <button class="delete-btn" (click)="deleteTask(task.id)">🗑️</button>
+      </div>
+    } @empty {
+      <div class="empty-state">
+        ✨ No hay tareas. ¡Agrega una usando el formulario!
+      </div>
+    }
+  </div>
+</div>

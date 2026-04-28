@@ -1,0 +1,21 @@
+<main>
+  <h1>📝 {{ title }}</h1>
+  <p class="subtitle">Gestiona tus tareas de forma moderna y eficiente</p>
+  
+  <app-task-form />
+  
+  <app-task-list />
+  
+  <!-- Estadísticas solo se cargan cuando son visibles -->
+  @defer (on viewport) {
+    <app-task-stats />
+  } @placeholder (minimum 500ms) {
+    <div class="stats-placeholder">
+      📊 Desplázate hacia abajo para ver estadísticas
+    </div>
+  } @loading {
+    <div class="stats-placeholder">
+      ⏳ Cargando estadísticas...
+    </div>
+  }
+</main>
